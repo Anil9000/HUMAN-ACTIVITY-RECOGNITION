@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Action Recognition</title>
+    <link rel="stylesheet" href="./css/app.css">
+    <script src="./js/lib/socket.io-1.2.1.js"></script>
+    <script src='./js/lib/lodash.min.js'></script>
+    <script src='./js/lib/three.min.js'></script>
+    <script src='./js/lib/zig.min.js'></script>
+    <script src='./js/lib/sylvester.js'></script>
+    <script src='./js/lib/jquery-1.11.1.min.js'></script>
+
+    <script src='./js/src/Recognizer.js'></script>
+    <script src='./js/src/helpers/CoordinateHelper.js'></script>
+    <script src='./js/src/entities/Skeleton.js'></script>
+    <script src='./js/src/entities/SkeletonMaxDisplacement.js'></script>
+    <script src='./js/src/ui/ui.js'></script>
+    <script src='./js/src/ui/Skeleton.js'></script>
+    <script src='./js/src/helpers/ViewHelper.js'></script>
+</head>
+<body>
+    <div id="fps"></div>
+    <div id="actionName"></div>
+
+    <script>
+        var socket = io();
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load zigfu
+            zig.addEventListener('loaded', function() {
+                new ar.Recognizer();
+            });
+        }, false);
+    </script>
+</body>
+</html>
