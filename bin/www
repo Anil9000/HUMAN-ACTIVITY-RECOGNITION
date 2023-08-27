@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+var app = require('../app');
+var SocketModel = require('../models/SocketModel');
+
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function() {
+    console.log('Express server listening on port ' + server.address().port);
+});
+
+new SocketModel(server);
